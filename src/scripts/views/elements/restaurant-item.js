@@ -11,7 +11,7 @@ class RestaurantItem extends HTMLElement {
   render() {
     return this.innerHTML = `
     <img src="${API_ENDPOINT.IMAGE.MEDIUM(this._restaurant.pictureId)}" alt="${
-  this._restaurant.name} restaurant">
+  this._restaurant.name} restaurant" class="lazyload">
     <div class="city"><p>${this._restaurant.city}</p></div>
     <div class="detail">
         <p class="rating">Rating : ${this._restaurant.rating}</p>

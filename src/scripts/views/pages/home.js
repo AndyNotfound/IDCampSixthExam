@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import RestaurantDataSource from '../../data/restaurant-data';
 import '../elements/restaurant-list.js';
 
@@ -6,7 +7,10 @@ const Home = {
     return `
         <section id="hero">
             <!-- Start of the Hero section -->
-            <img src="./image/hero-image_2.jpg" alt="" />
+            <picture>
+              <source media="(max-width: 600px)" srcset="./image/hero-image_2-small.jpg" />
+              <img src="./image/hero-image_2-large.jpg" alt="" />
+            </picture>
             <div class="hero-content">
             <header>We Serve The Best Dishes In town</header>
             <button>RSVP NOW!</button>

@@ -10,6 +10,7 @@ const createDetailTemplate = (restaurant) => {
           <img
             src="${API_ENDPOINT.IMAGE.LARGE(restaurant.pictureId)}"
             alt="restaurant ${restaurant.name}"
+            class="lazyload"
           />
           <p class="restaurant-rate">Rating: ${restaurant.rating}</p>
         </div>
