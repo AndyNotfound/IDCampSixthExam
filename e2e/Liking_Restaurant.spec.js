@@ -1,7 +1,6 @@
 /* eslint-disable new-cap */
 const assert = require('assert');
 
-
 Feature('Favorite Restaurant');
 
 Before(({I}) => {
@@ -23,17 +22,16 @@ Scenario('liking one restaurant', async ({I}) => {
   const likedRestaurantText = await I.grabTextFrom('.detail a');
 
   assert.strictEqual(restaurantText, likedRestaurantText);
+});
 
-  I.seeElement('restaurant-item');
+Scenario('unliking one restaurant', async ({I}) => {
+  I.dontSeeElement('restaurant-item');
+  I.amOnPage('');
   I.seeElement('.detail a');
   I.click(locate('.detail a').first());
   I.seeElement('#likeButton');
   I.click('#likeButton');
   I.amOnPage('#/favorite');
-  I.dontSeeElement('restaurant-item');
-});
-
-Scenario('unliking one restaurant', ({I}) => {
   I.seeElement('restaurant-item');
   I.seeElement('.detail a');
   I.click(locate('.detail a').first());
